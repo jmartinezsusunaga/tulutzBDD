@@ -1,0 +1,35 @@
+{
+	"folders": {},
+	"connections": {
+		"mysql8-1898d863d0e-2eb2707c312d4003": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "calendrier_tulutz",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "calendrier_tulutz",
+				"url": "jdbc:mysql://localhost:3306/calendrier_tulutz",
+				"configurationType": "MANUAL",
+				"home": "C:\\Program Files\\MySQL\\MySQL Router 8.0",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": true,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800
+		}
+	}
+}

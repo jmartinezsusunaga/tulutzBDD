@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item id="Suggestion/NodeList/MySQLTableColumn">
+		<column name="Column Name" visible="true" order="0" width="150"/>
+		<column name="#" visible="true" order="1" width="46"/>
+		<column name="Data Type" visible="true" order="2" width="98"/>
+		<column name="Not Null" visible="false" order="3" width="100"/>
+		<column name="Auto Increment" visible="false" order="4" width="100"/>
+		<column name="Key" visible="false" order="5" width="100"/>
+		<column name="Default" visible="false" order="6" width="100"/>
+		<column name="Extra" visible="false" order="7" width="100"/>
+		<column name="Expression" visible="false" order="8" width="100"/>
+		<column name="Comment" visible="true" order="3" width="87"/>
+	</item>
+	<item id="scriptSelectorViewer">
+		<column name="Script" visible="true" order="0" width="199"/>
+		<column name="Time" visible="true" order="1" width="165"/>
+		<column name="Info" visible="true" order="2" width="68"/>
+		<column name="Folder" visible="true" order="3" width="80"/>
+	</item>
+</items>
