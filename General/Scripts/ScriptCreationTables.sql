@@ -1,30 +1,21 @@
 
-CREATE TABLE calendrier_tulutz(
-id_ct INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
-nom_evenement_ct VARCHAR(100),
-est_collaboration_ct BOOLEAN,
-partenaire_ct VARCHAR(255),
-membre_tulutz_ct VARCHAR(100) NOT NULL
-);
-
-CREATE TABLE info_evenements(
-nom_evenement_ie VARCHAR(100) NOT NULL,
-date_ie DATE DEFAULT NULL,
+CREATE TABLE evenements_tulutz(
+id_et INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nom_evenement_et VARCHAR(100),
+date_et DATE DEFAULT NULL,
 type_evenement_ie VARCHAR(100) NOT NULL,
 ville_evenement_ie VARCHAR(100) NOT NULL,
-est_materiaux_ie BOOLEAN,
 commentaires_materiaux_ie VARCHAR(255)
 );
 
-ALTER TABLE info_evenements ADD PRIMARY KEY(nom_evenement_ie, date_ie);
 
-CREATE TABLE info_partenaires(
+CREATE TABLE partenaires(
 id_ip INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
 nom_ip VARCHAR(100) NOT NULL,
 prenom_ip VARCHAR(100) NOT NULL,
 mail_ip VARCHAR(255) NOT NULL,
 telephone_ip  VARCHAR(13) NOT NULL,
-ville_ip VARCHAR(100) NOT NULL
+ville_ip VARCHAR(100) NOT null
 );
 
 CREATE TABLE membres_tulutz(
@@ -33,5 +24,21 @@ nom_mt VARCHAR(100) NOT NULL,
 prenom_mt VARCHAR(100) NOT NULL,
 mail_mt VARCHAR(255) NOT NULL,
 telephone_mt  VARCHAR(13) NOT NULL,
-responsabilite_mt VARCHAR(100) NOT NULL
+responsabilite_mt VARCHAR(100) NOT null
+);
+
+CREATE TABLE memebre_responsable_evenement(
+id_evenement_mre INTEGER,
+id_membre_mre INTEGER,
+PRIMARY KEY (id_evenement_mre, id_membre_mre),
+FOREIGN key (id_evenement_mre) REFERENCES evenements_tulutz(id_et),
+FOREIGN key (id_membre_mre) REFERENCES membres_tulutz(id_mt)
+);
+
+CREATE TABLE partenaire_responsable_evenement(
+id_evenement_pre INTEGER,
+id_partenaire_pre INTEGER, 
+PRIMARY KEY (id_evenement_pre, id_partenaire_pre),
+FOREIGN key (id_evenement_pre) REFERENCES evenements_tulutz(id_et),
+FOREIGN key (id_partenaire_pre) REFERENCES partenaires(id_ip)
 );
