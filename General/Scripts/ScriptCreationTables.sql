@@ -1,9 +1,10 @@
 
-CREATE TABLE evenements_tulutz(
-id_et INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
-nom_evenement_et VARCHAR(100),
-date_et DATE DEFAULT NULL,
-type_evenement_ie VARCHAR(100) NOT NULL,
+CREATE TABLE evenements(
+id_e INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nom_evenement_e VARCHAR(100),
+date_evenement_e DATE DEFAULT NULL,
+lieu_evenement_e VARCHAR(100),
+prevente_evenement BOOLEAN,
 ville_evenement_ie VARCHAR(100) NOT NULL,
 commentaires_materiaux_ie VARCHAR(255)
 );
