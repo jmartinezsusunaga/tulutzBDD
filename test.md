@@ -3,61 +3,43 @@
 
 ```mermaid
 erDiagram
-    Utilisateur }o--|{ Associations : ""
-    Utilisateur |o--o| Artistes : ""
+    
+    Utilisateur }|--|{ Utilisateur_evenemments : ""
+    evenements }|--|{ Utilisateur_evenemments : ""
+
+ 
     Utilisateur {
         int id_uti PK "NOT NULL AUTO_INCREMENT"
+        Date date_naissance_uti
+        string mdp_uti
         string nom_uti "NOT NULL Max 100 caracteres"
         string prenom_uti "NOT NULL Max 100 caracteres"
         string mail_uti "NOT NULL Max 100 caracteres"
         string droits_uti "NOT NULL Max 100 caracteres"
-        Date date_naissance_uti
-        string personnalite_juridique_uti "NOT NULL Max 100 caracteres (Cela aura comme valeurs = Association, Artiste ou personne naturelle)"
-        int id_association_ass_uti FK
+        string personnalite_juridique_uti "NOT NULL Max 100 caracteres (Cela aura comme valeurs = Association, Artiste)"
+        string nom_artisttique_uti "NOT NULL Max 100 caracteres"
         string photo_uti 
-        string type_poste_association_uti "NOT NULL Max 100 caracteres (ça valeur sera = Président, tresorier, vice-président etc)"
-    }
-
-    Artistes }o--o{ Associations : ""
-    Artistes {
-        int id_art PK "NOT NULL AUTO_INCREMENT"
-        int id_ass_art FK
-        string nom_art "NOT NULL Max 100 caracteres"
-        string prenom_art "NOT NULL Max 100 caracteres"
-        string nom_artiste_art "NOT NULL Max 100 caracteres"
+        string type_poste_association_uti "NOT NULL Max 100 caracteres (si association ça valeur sera = Président, tresorier, vice-président etc)"
         string bio_art "NOT NULL Max 1000 caracteres"
-        string photo_art 
         string instagram_art
         string soundCloud_art
         string facebook_art
         string spotify_art
         string youtube_art
-        Date heure_passage_art
-        string visuel_artiste_art
-
+        string logo_ass_art
     }
 
-    Associations }o--|{ evenements : ""
-    Associations {
-        int id_ass PK "NOT NULL AUTO_INCREMENT"
-        int id_uti_ass FK
-        string nom_ass "NOT NULL Max 100 caracteres"
-        int id_event_ev_ass FK
-        string bio_ass "NOT NULL Max 1000 caracteres"
-        string logo_ass
-        string instagram_ass
-        string soundCloud_ass
-        string facebook_ass
-        string spotify_ass
-        string youtube_ass 
-        string page_web_ass
-
+    Utilisateur_evenemments {
+        int Utilisateur_evenemments_ue PK "NOT NULL AUTO_INCREMENT"
+        int id_utilisateur_ue FK
+        int id_evenement_ue FK
+        Date heure_passage_ue
+        string visuel_artiste_ue
     }
 
-    evenements }o--o{ Artistes : ""
-    evenements ||--o{ Utilisateur : ""
+  
     evenements {
-        int id_ev pk "NOT NULL AUTO_INCREMENT"
+        int id_ev PK "NOT NULL AUTO_INCREMENT"
         string nom_ev "NOT NULL Max 100 caracteres"
         string lieu_ev "NOT NULL Max 100 caracteres"
         Date date_ev
