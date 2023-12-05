@@ -46,7 +46,6 @@ erDiagram
         int capacite_event_ev
         string visuel_facebook-ev
         string visuel_insta_poste_ev
-        int id_art_ev FK
     }
 
 
