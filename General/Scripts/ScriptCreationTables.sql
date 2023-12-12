@@ -2,7 +2,7 @@
 CREATE TABLE evenements(
 id_e INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
 nom_evenement_e VARCHAR(100),
-date_evenement_e DATE DEFAULT NULL,
+date_evenement_e Mi ,
 lieu_evenement_e VARCHAR(100),
 prevente_evenement BOOLEAN,
 ville_evenement_ie VARCHAR(100) NOT NULL,
