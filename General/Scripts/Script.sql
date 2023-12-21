@@ -50,6 +50,7 @@ ALTER TABLE calendrier_tulutz ADD FOREIGN KEY (id_partenaire_ct) REFERENCES info
 select * from test;
 select * from evenements;
 select * from utilisateur;
+select * from utilisateur_evenemments;
 
 INSERT INTO test VALUES (1,'jenja','2023-09-08'),
 (2,'biken bass','2023-03-08'),
@@ -69,3 +70,21 @@ INSERT INTO test_2 VALUES (1,'joshua'),
 (2,'lol'),
 (3,'cam'),
 (4,'Megane');
+
+INSERT INTO utilisateur VALUES (1,'1995-08-13','Jonathan1995','Martinez','Jonathan','jonathan@gmail.com','Admin','perNat','','','','','','','','','',''),
+(2,'1996-08-09','Mathilde1996','Vodka','Mathilde','Mathilde@gmail.com','Creator','perNat','','','','','','','','','',''),
+(3,'1997-07-15','Lucie1997','Bonnet','Lucie','Lucie@gmail.com','artiste','perNat','JMS','','','','','','','','',''),
+(4,'1998-06-11','Aura1998','Susunaga','Aura','Aura@gmail.com','participant','perNat','','','','','','','','','',''),
+(5,'2018-05-17','ExoSound1999','','','exosound@gmail.com','Creator','Association','Exo Sound','','','','','','','','','');
+
+INSERT INTO evenements VALUES (1,'Exo festival','La crousette','2024-07-20','420','','',''),
+(2,'Exo Jenja','Toulouse','2024-03-09','40','','',''),
+(3,'Ipitoal','Le mase dazil','2024-08-13','60','','',''),
+(4,'Soytek','Bordeaux','2024-12-16','1000','','',''),
+(5,'Sun Systeme','Pau','2024-06-14','70','','','');
+
+INSERT INTO utilisateur_evenemments VALUES (1,1,'',''),
+(1,2,'',''),
+(3,,'',''),
+(4,,'',''),
+(5,,'','');

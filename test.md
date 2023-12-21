@@ -30,9 +30,8 @@ erDiagram
     }
 
     Utilisateur_evenemments {
-        int Utilisateur_evenemments_ue PK "NOT NULL AUTO_INCREMENT"
-        int id_utilisateur_ue FK
-        int id_evenement_ue FK
+        int id_utilisateur_ue PK
+        int id_evenement_ue PK
         Date heure_passage_ue
         string visuel_artiste_ue
     }
